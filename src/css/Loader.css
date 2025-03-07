@@ -1,6 +1,6 @@
 :root {
-    --bg-color: rgba(56, 0, 209, 0.911);
-    --text-color: #FFD700 ;
+    --bg-color: rgb(250, 220, 165);
+    --text-color: black ;
     --letter-gap: 3px;
     --space-width: 12px;
 }
@@ -10,7 +10,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
+    background-image: url(/public/bg/img3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:  center;
     overflow: hidden;
     position: relative;
 }
@@ -22,7 +26,8 @@
 
 .jiggle-letter {
     font-size: 5vw;
-    font-weight: bold;
+    font-weight:900;
+    font-size: 30px;
     color: var(--text-color);
     display: inline-block;
     animation: letter-jiggle 1s ease-in-out infinite;
@@ -32,7 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0;
-    animation: move-across 5s linear forwards; /* Moves entire text across screen */
+    /* animation: move-across 5s linear forwards; Moves entire text across screen */
 }
 
 .jiggle-space {
