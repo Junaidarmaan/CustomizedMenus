@@ -1,0 +1,62 @@
+:root {
+    --navbar-bg-color: #333;
+    --navbar-text-color: white;
+    --navbar-hover-color: #ddd;
+    --navbar-shadow-color: rgba(0, 0, 0, 0.15);
+    --scrollbar-thumb-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Top Navbar Styles */
+.top-navbar {
+    position: sticky;
+    top: 5px; /* 5px gap from the top */
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto; /* Center it horizontally */
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    z-index: 1000;
+    padding: 10px 0;
+    border-radius: 10px; /* Rounded corners for floating effect */
+    box-shadow: 0 4px 10px var(--navbar-shadow-color); /* Subtle floating shadow */
+    margin-top: 10px;
+}
+
+.nav-container {
+    display: flex;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px; /* Space between links */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents the links from wrapping to next line */
+    scrollbar-width: thin; /* Optional: controls scrollbar appearance in Firefox */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on touch devices */
+    max-width: 100%; /* Make sure it doesn't exceed container width */
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: var(--navbar-text-color);
+    text-decoration: none;
+    font-size: 16px;
+    flex-shrink: 0; /* Makes sure links don't shrink */
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: var(--navbar-hover-color);
+}
+
+/* Scrollbar Customization */
+.nav-links::-webkit-scrollbar {
+    height: 5px; /* Customize scrollbar height */
+}
+
+.nav-links::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-color); /* Customize scrollbar thumb */
+    border-radius: 5px;
+}

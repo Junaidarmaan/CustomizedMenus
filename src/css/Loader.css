@@ -1,0 +1,61 @@
+:root {
+    --bg-color: rgba(56, 0, 209, 0.911);
+    --text-color: #FFD700 ;
+    --letter-gap: 3px;
+    --space-width: 12px;
+}
+
+.jiggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    position: relative;
+}
+
+.jiggle-word {
+    display: inline-flex;
+    gap: var(--letter-gap); /* Use variable for letter gap */
+}
+
+.jiggle-letter {
+    font-size: 5vw;
+    font-weight: bold;
+    color: var(--text-color);
+    display: inline-block;
+    animation: letter-jiggle 1s ease-in-out infinite;
+}
+
+.jiggle-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    animation: move-across 5s linear forwards; /* Moves entire text across screen */
+}
+
+.jiggle-space {
+    width: var(--space-width);
+    display: inline-block;
+}
+
+/* Jiggle animation for individual letters */
+@keyframes letter-jiggle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Move entire text across screen */
+@keyframes move-across {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}

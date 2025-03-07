@@ -1,0 +1,46 @@
+/* Define global variables in :root */
+:root {
+    --font-family: Arial, sans-serif;
+    --primary-bg: #fff;
+    --card-border-color: #ddd;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --gap-size: 20px;
+    --card-width: 200px;
+    --image-height: 150px;
+    --padding: 20px;
+}
+
+/* Main menu container */
+.menu {
+    padding: var(--padding);
+    text-align: center;
+    font-family: var(--font-family);
+}
+
+/* Grid for menu items */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+    gap: var(--gap-size);
+    margin-top: var(--gap-size);
+    justify-content: center;
+}
+
+/* Individual menu card */
+.card {
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    background-color: var(--primary-bg);
+    padding: 10px;
+    width: var(--card-width);
+    text-align: center;
+}
+
+/* Menu item image */
+.menu-image {
+    width: 100%;
+    height: var(--image-height);
+    object-fit: cover;
+}
