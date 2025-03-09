@@ -8,7 +8,7 @@ function App() {
 
     return (
         <div>
-            <div className="title">AL-JOINT</div>
+            <div className="title">AL-JOINT ✨</div>
             <NavBar onPageChange={setCurrentPage} />
             <Menu page={currentPage} />
         </div>

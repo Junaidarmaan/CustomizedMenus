@@ -9,54 +9,58 @@
 /* Top Navbar Styles */
 .top-navbar {
     position: sticky;
-    top: 5px; /* 5px gap from the top */
+    top: 5px;
     width: 80%;
     max-width: 1000px;
-    margin: 0 auto; /* Center it horizontally */
+    margin: 0 auto;
     background-color: var(--navbar-bg-color);
     color: var(--navbar-text-color);
     z-index: 1000;
     padding: 10px 0;
-    border-radius: 10px; /* Rounded corners for floating effect */
-    box-shadow: 0 4px 10px var(--navbar-shadow-color); /* Subtle floating shadow */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--navbar-shadow-color);
     margin-top: 10px;
-}
-
-.nav-container {
-    display: flex;
 }
 
 .nav-links {
     display: flex;
-    gap: 15px; /* Space between links */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents the links from wrapping to next line */
-    scrollbar-width: thin; /* Optional: controls scrollbar appearance in Firefox */
-    -webkit-overflow-scrolling: touch; /* For smoother scrolling on touch devices */
-    max-width: 100%; /* Make sure it doesn't exceed container width */
-    justify-content: space-around;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
     padding: 0 15px;
 }
 
-.nav-links a {
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.nav-item img {
+    width: 30px;   /* Keeps image small */
+    height: 30px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.nav-item a {
     color: var(--navbar-text-color);
     text-decoration: none;
-    font-size: 16px;
-    flex-shrink: 0; /* Makes sure links don't shrink */
+    font-size: 14px;
 }
 
-.nav-links a:hover {
+.nav-item:hover img {
+    transform: scale(1.1);
+    border-color: var(--navbar-hover-color);
+}
+
+.nav-item:hover a {
     text-decoration: underline;
     color: var(--navbar-hover-color);
-}
-
-/* Scrollbar Customization */
-.nav-links::-webkit-scrollbar {
-    height: 5px; /* Customize scrollbar height */
-}
-
-.nav-links::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb-color); /* Customize scrollbar thumb */
-    border-radius: 5px;
 }
