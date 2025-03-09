@@ -9,8 +9,8 @@ const menuData = {
         { name: "Chicken Lollipop", price: "₹250", desc: "Spicy chicken drumsticks.", image: "starter3.jpg" },
     ],
     combos: [
-        { name: "Veg Combo", price: "₹350", desc: "Complete meal with rice, curry, dessert.", image: "combo1.jpg" },
-        { name: "Non-Veg Combo", price: "₹450", desc: "Chicken curry, biryani, and dessert.", image: "combo2.jpg" }
+        { name: "Veg Combo", price: "₹350", desc: "Complete meal with rice, curry, dessert.", image: "combo4.jpg" },
+        { name: "Non-Veg Combo", price: "₹450", desc: "Chicken curry, biryani, and dessert.", image: "combo5.jpg" }
     ],
     family: [
         { name: "Family Feast", price: "₹1200", desc: "Complete meal for 4 people.", image: "family1.jpg" },
