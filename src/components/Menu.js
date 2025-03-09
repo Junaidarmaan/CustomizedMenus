@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/Menu.css';
+import FoodDetails from './FoodDetails';
 
 const menuData = {
     starters: [
@@ -17,7 +18,8 @@ const menuData = {
     ]
 };
 
-function Menu({ page, onItemClick }) {
+function Menu({ page }) {
+    const [selectedItem, setSelectedItem] = useState(null);
     const items = menuData[page.toLowerCase()] || [];
 
     return (
@@ -25,18 +27,32 @@ function Menu({ page, onItemClick }) {
             <h1>{page} Menu</h1>
             <div className="gallery">
                 {items.map((item, index) => (
-                    <div key={index} className="card" onClick={() => onItemClick(item)}>
+                    <div 
+                        key={index} 
+                        className="card" 
+                        onClick={() => setSelectedItem(item)}
+                    >
                         <img
-                            src={`/${page.toLowerCase()}/${item.image}`}  // Corrected image path
+                            src={`/${page.toLowerCase()}/${item.image}`} 
                             alt={item.name}
                             className="menu-image"
-                            onError={(e) => e.target.src = '/images/placeholder.jpg'} // Fallback image
+                            onError={(e) => e.target.src = '/images/placeholder.jpg'}
                         />
                         <h3>{item.name}</h3>
                         <strong>{item.price}</strong>
                     </div>
                 ))}
             </div>
+
+            {selectedItem && (
+                <FoodDetails 
+                    item={{ 
+                        ...selectedItem, 
+                        image: `${page.toLowerCase()}/${selectedItem.image}` 
+                    }} 
+                    onClose={() => setSelectedItem(null)} 
+                />
+            )}
         </div>
     );
 }
