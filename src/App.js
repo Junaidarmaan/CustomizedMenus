@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Preloader from './components/PreLoader';
+import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import Menu from './components/Menu';  // New component to show different pages
+import Item from './components/Item';  // New Item component for details
+import './App.css';
 
 function App() {
-    const [isLoading, setIsLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState('Home');  // To track which page is active
+    const [selectedItem, setSelectedItem] = useState(null);  // State for selected item
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);  // Hide preloader after 4 seconds
-        }, 4000);
-
-        return () => clearTimeout(timer);  // Cleanup
-    }, []);
+    // Function to handle item click in Menu
+    const handleItemClick = (item) => {
+        setSelectedItem(item);  // Set the selected item when clicked
+    };
 
     return (
-        <>
-            {isLoading && <Preloader />}
-            {!isLoading && (
-                <div>
-                    <NavBar onPageChange={setCurrentPage} />
-                    <Menu page={currentPage} />   {/* Pass page name to Menu */}
-                </div>
+        <div>
+            <div className="title">AL-JOINT</div>
+            <NavBar onPageChange={setCurrentPage} />
+            
+            {/* Conditionally render Menu or Item component */}
+            {selectedItem ? (
+                <Item item={selectedItem} />  
+            ) : (
+                <Menu page={currentPage} onItemClick={handleItemClick} />  
             )}
-        </>
+        </div>
     );
 }
 

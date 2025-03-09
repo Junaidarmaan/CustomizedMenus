@@ -10,8 +10,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* background-color: var(--bg-color); */
-    background-image: url(/public/bg/img3.jpg);
+    background-color: var(--bg-color);
+    /* background-image: url(/public/bg/img3.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position:  center;
